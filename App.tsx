@@ -1,4 +1,5 @@
 import { StatusBar, StyleSheet, Text, View } from 'react-native';
+import { Home } from './src/screen/Home';
 
 export default function App() {
   return (
@@ -6,8 +7,9 @@ export default function App() {
       <StatusBar
         barStyle="light-content"
         translucent
+        backgroundColor='transparent'
       />
-      <Text>testando</Text>
+      <Home />
     </>
   );
 }
