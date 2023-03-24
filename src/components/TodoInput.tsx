@@ -1,7 +1,20 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native'
 
-export const TodoInput = () => {
+interface ITodoInputProps {
+    addTask: (task: string) => void
+}
+
+
+export const TodoInput = ({ addTask }: ITodoInputProps) => {
+    const [task, setTask] = useState('');
+    function handleAddNewTask() {
+
+        if (task.length >= 1) {
+            addTask(task)
+            setTask('')
+        }
+    }
     return (
         <View style={styles.container}>
             <TextInput
@@ -9,12 +22,21 @@ export const TodoInput = () => {
                 placeholderTextColor='#808080'
                 selectionColor='#F2F2F2'
                 style={styles.inputText}
+                returnKeyType="send"
+                value={task}
+                onChangeText={text => setTask(text)}
+                onSubmitEditing={handleAddNewTask}
+
             />
-            <View style={styles.button}>
+            <TouchableOpacity
+                activeOpacity={0.7}
+                style={styles.button}
+                onPress={handleAddNewTask}
+            >
                 <View style={styles.imgButton}>
                     <Text style={styles.textButton}>+</Text>
                 </View>
-            </View>
+            </TouchableOpacity>
         </View>
     )
 }
