@@ -18,23 +18,23 @@ export const EmptyList = () => {
 
 const styles = StyleSheet.create({
     container: {
-        marginTop: 20,
-        minHeight: 247,
-        width: 327,
         alignItems: 'center',
         borderTopColor: '#333333',
         borderTopWidth: 1,
         justifyContent: "center",
+        marginTop: 20,
+        minHeight: 247,
+        width: 327,
     },
     firstText: {
-        fontWeight: 'bold',
-        fontSize: 14,
         color: '#808080',
+        fontSize: 14,
+        fontWeight: 'bold',
         marginTop: 16
     },
     secondText: {
+        color: '#808080',
         fontSize: 14,
-        color: '#808080'
     }
 })
 

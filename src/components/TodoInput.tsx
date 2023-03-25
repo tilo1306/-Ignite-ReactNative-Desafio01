@@ -18,6 +18,7 @@ export const TodoInput = ({ addTask }: ITodoInputProps) => {
     return (
         <View style={styles.container}>
             <TextInput
+                maxLength={230}
                 placeholder='Adicione uma nova tarefa'
                 placeholderTextColor='#808080'
                 style={styles.inputText}
@@ -52,11 +53,11 @@ const styles = StyleSheet.create({
     inputText: {
         backgroundColor: '#262626',
         borderRadius: 6,
+        color: 'white',
         height: 54,
         marginRight: 4,
         paddingHorizontal: 16,
         width: 271,
-        color: 'white'
     },
     button: {
         alignItems: 'center',

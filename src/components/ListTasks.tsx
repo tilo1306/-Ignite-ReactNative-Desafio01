@@ -2,14 +2,15 @@ import React from 'react'
 import { FlatList, Image, StyleSheet, Text, View } from 'react-native';
 import { ITask } from '../screen/Home'
 import { Count } from './Count';
-import ClipBoard from '../../assets/Clipboard.png'
 import { EmptyList } from './EmptyList';
 import { TaskItem } from './TaskItem';
 
 interface ITasksListProps {
     tasks: ITask[];
+    toggleTaskDone: (taskId: string) => void;
+    removeTask: (taskId: string) => void
 }
-export const ListTasks = ({ tasks }: ITasksListProps) => {
+export const ListTasks = ({ tasks, toggleTaskDone, removeTask }: ITasksListProps) => {
 
     return (
         <>
@@ -25,28 +26,26 @@ export const ListTasks = ({ tasks }: ITasksListProps) => {
                                 return (
                                     <TaskItem
                                         task={item}
+                                        toggleTaskDone={toggleTaskDone}
+                                        removeTask={removeTask}
                                     />
                                 )
                             }}
                         />
                     </View>
-
                     :
                     < EmptyList />
             }
-
         </>
     )
 }
 
 const styles = StyleSheet.create({
     container: {
+        alignItems: 'center',
+        justifyContent: "center",
         marginTop: 20,
         minHeight: 247,
         width: 327,
-        alignItems: 'center',
-        borderTopColor: '#333333',
-        borderTopWidth: 1,
-        justifyContent: "center",
     },
 })

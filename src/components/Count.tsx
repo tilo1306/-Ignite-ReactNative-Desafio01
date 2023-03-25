@@ -31,31 +31,30 @@ export const Count = ({ tasks }: ITasksListProps) => {
 const styles = StyleSheet.create({
     container: {
         flexDirection: 'row',
+        justifyContent: 'space-between',
         marginTop: 32,
         width: 327,
-        justifyContent: 'space-between'
-
     },
     areaTextCount: {
         flexDirection: 'row',
     },
     textCreated: {
+        color: '#489ACC',
         fontSize: 14,
         fontWeight: "bold",
-        color: '#489ACC'
     },
     textConcluded: {
+        color: '#8284FA',
         fontSize: 14,
         fontWeight: "bold",
-        color: '#8284FA'
     },
     areaCount: {
-        marginLeft: 8,
-        borderRadius: 19,
-        backgroundColor: '#333333',
-        width: 25,
-        height: 19,
         alignItems: 'center',
+        backgroundColor: '#333333',
+        borderRadius: 19,
+        height: 19,
+        marginLeft: 8,
+        width: 25,
     },
     count: {
         fontSize: 12,
