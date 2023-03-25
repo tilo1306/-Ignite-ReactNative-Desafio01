@@ -3,8 +3,9 @@ import { Alert, StyleSheet, Text, View } from 'react-native';
 import { Header } from '../components/Header';
 import { TodoInput } from '../components/TodoInput';
 import * as Crypto from "expo-crypto";
+import { ListTasks } from '../components/ListTasks';
 
-interface ITask {
+export interface ITask {
     id: number
     task: string
     done: boolean
@@ -54,7 +55,7 @@ export const Home = () => {
         <View style={styles.container}>
             <Header />
             <TodoInput addTask={handleAddTaskInput} />
-            {tasks.map(p => <Text style={{ color: 'white' }}>{p.task}</Text>)}
+            <ListTasks tasks={tasks} />
         </View>
     )
 }
@@ -63,6 +64,7 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: '#191919',
+        alignItems: 'center'
 
     }
 })

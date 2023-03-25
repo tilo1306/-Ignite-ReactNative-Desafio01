@@ -14,15 +14,15 @@ export const Header = () => {
 
 const styles = StyleSheet.create({
     container: {
-        paddingTop: getStatusBarHeight(true) + 16,
-        height: 173,
-        backgroundColor: '#0D0D0D',
         alignItems: 'center',
-
+        backgroundColor: '#0D0D0D',
+        height: 173,
+        paddingTop: getStatusBarHeight(true) + 16,
+        width: '100%'
     },
     img: {
-        marginTop: 24,
+        height: 32,
         justifyContent: 'center',
-        height: 32
+        marginTop: 24,
     }
 })

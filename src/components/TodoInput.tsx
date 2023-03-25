@@ -20,7 +20,6 @@ export const TodoInput = ({ addTask }: ITodoInputProps) => {
             <TextInput
                 placeholder='Adicione uma nova tarefa'
                 placeholderTextColor='#808080'
-                selectionColor='#F2F2F2'
                 style={styles.inputText}
                 returnKeyType="send"
                 value={task}
@@ -43,43 +42,44 @@ export const TodoInput = ({ addTask }: ITodoInputProps) => {
 
 const styles = StyleSheet.create({
     container: {
-        zIndex: 1,
-        justifyContent: 'center',
         alignItems: 'center',
+        flexDirection: 'row',
+        justifyContent: 'center',
         marginTop: -31,
-        flexDirection: 'row'
+        zIndex: 1,
 
     },
     inputText: {
         backgroundColor: '#262626',
-        height: 54,
-        width: 271,
-        marginRight: 4,
         borderRadius: 6,
-        paddingHorizontal: 16
+        height: 54,
+        marginRight: 4,
+        paddingHorizontal: 16,
+        width: 271,
+        color: 'white'
     },
     button: {
-        backgroundColor: '#1E6F9F',
-        height: 54,
-        width: 54,
-        borderRadius: 6,
-        justifyContent: 'center',
         alignItems: 'center',
-        flexDirection: 'row'
+        backgroundColor: '#1E6F9F',
+        borderRadius: 6,
+        flexDirection: 'row',
+        height: 54,
+        justifyContent: 'center',
+        width: 54,
     },
     imgButton: {
-        height: 20,
-        width: 20,
-        borderRadius: 10,
+        alignItems: 'center',
         borderColor: 'white',
+        borderRadius: 10,
         borderWidth: 1,
+        height: 20,
         padding: 0,
         justifyContent: 'center',
-        alignItems: 'center',
+        width: 20,
     },
     textButton: {
-        flex: 1,
         color: 'white',
+        flex: 1,
         fontSize: 7,
         textAlignVertical: 'center'
     }
